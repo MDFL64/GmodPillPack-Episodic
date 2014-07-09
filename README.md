@@ -1,4 +1,4 @@
-GmodPillPack
+GmodPillPack-Episodic
 ============
 
 This is the Episodic Pill Pack addon. It allows you to change into creatures and machines from Half Life 2 Episode 1 and Episode 2.
