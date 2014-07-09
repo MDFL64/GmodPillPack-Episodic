@@ -1,0 +1,13 @@
+{
+	"title"		:	"Episodic Pill Pack",
+	"type"		:	"vehicle",
+	"tags"		:	["fun"],
+	"ignore"	:
+	[
+		".git*",
+		"*.gma",
+		"*.md",
+		"*.bat",
+		"LICENSE"
+	]
+}
