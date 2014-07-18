@@ -1,12 +1,5 @@
 AddCSLuaFile()
 
-if CLIENT then
-	game.AddParticles("particles/weapon_fx.pcf")
-
-	PrecacheParticleSystem("weapon_combine_ion_cannon")
-	PrecacheParticleSystem("weapon_combine_ion_cannon_explosion")
-end
-
 pk_pills.packStart("Episode 1","ep1","games/16/hl2.png")
 pk_pills.packRequireGame("Half-Life 2: Episode 1",380)
 
@@ -212,26 +205,4 @@ pk_pills.register("ep1_vort_blue",{
 	health=1000
 })
 
-/* maybe someday ): -- Need better animations
-pk_pills.register("ep1_advisor",{
-	printName="Enhanced Advisor",
-	parent="advisor",
-	model="models/birdbrainswagtrain/episodic/advisor.mdl",
-	default_rp_cost=10000,
-	boneMorphs = {
-		["advisor.l_up_arm"]=function(ply,ent)
-			//local a= ent:WorldToLocalAngles(ply:EyeAngles())
-			//if ent:GetCycle()==1 then
-				return {rot=Angle(CurTime()*100,0,0)}
-			//end
-		end,
-		["advisor.l_low_arm"]=function(ply,ent)
-			//local a= ent:WorldToLocalAngles(ply:EyeAngles())
-			//if ent:GetCycle()==1 then
-				return {rot=Angle(CurTime()*0,0,0)}
-			//end
-		end
-	},
-})
-*/
 pk_pills.packFinalize()

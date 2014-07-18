@@ -21,6 +21,23 @@ end
 ------------------------
 
 AddCSLuaFile()
+
+if CLIENT then
+	game.AddParticles("particles/weapon_fx.pcf")
+	PrecacheParticleSystem("weapon_combine_ion_cannon")
+	PrecacheParticleSystem("weapon_combine_ion_cannon_explosion")
+
+	game.AddParticles("particles/striderbuster.pcf")
+	PrecacheParticleSystem("striderbuster_attach")
+	PrecacheParticleSystem("striderbuster_attach_flash")
+	PrecacheParticleSystem("striderbuster_explode_core")
+	PrecacheParticleSystem("striderbuster_explode_flash")
+	PrecacheParticleSystem("striderbuster_break")
+
+	game.AddParticles("particles/advisor_fx.pcf")
+	PrecacheParticleSystem("advisor_psychic_shield_idle")
+end
+
 include("include/pill_ep1.lua")
 include("include/pill_ep2.lua")
 

@@ -253,4 +253,133 @@ pk_pills.register("ep2_gnome",{
 	noFallDamage=true
 })
 
+pk_pills.register("ep2_advisor",{
+	printName="Enhanced Advisor",
+	parent="advisor",
+	model="models/birdbrainswagtrain/episodic/advisor.mdl",
+	default_rp_cost=10000,
+	attack={
+		mode="trigger",
+		func=function(ply,ent)
+			if ent:GetSequence()!=ent:LookupSequence("idle") then return end
+			ent:PillAnim("melee",true)
+
+			timer.Simple(.7,function()
+				if !IsValid(ent) then return end
+
+				local tr = util.TraceHull({
+					start=ent:GetPos(),
+					endpos=ent:GetPos()+ent:GetAngles():Forward()*200,
+					filter={ent},
+					mins=Vector(-25,-25,-25),
+					maxs=Vector(25,25,25)
+				})
+				if IsValid(tr.Entity) then
+					local dmg=DamageInfo()
+					dmg:SetAttacker(ply)
+					dmg:SetInflictor(ent)
+					dmg:SetDamageType(DMG_SLASH)
+					dmg:SetDamage(50)
+
+					tr.Entity:TakeDamageInfo(dmg)
+					
+					ent:PillSound("hit")
+				end
+			end)
+			timer.Simple(1.2,function()
+				if !IsValid(ent) then return end
+				ent:PillAnim("idle",true)
+			end)
+		end
+	},
+	attack2={
+		mode="trigger",
+		func=function(ply,ent)
+			if ent:GetSequence()!=ent:LookupSequence("idle") then return end
+			ent:PillAnim("grab",true)
+
+			timer.Simple(.7,function()
+				if !IsValid(ent) then return end
+
+				local tr = util.TraceHull({
+					start=ent:GetPos(),
+					endpos=ent:GetPos()+ent:GetAngles():Forward()*200,
+					filter={ent},
+					mins=Vector(-25,-25,-25),
+					maxs=Vector(25,25,25)
+				})
+				if IsValid(tr.Entity) and not tr.Entity:IsFlagSet(FL_GODMODE) then
+
+					local mdl_ent = pk_pills.getMappedEnt(tr.Entity) or tr.Entity
+
+					mdl_ent = mdl_ent.subModel or mdl_ent
+
+					mdl_ent = mdl_ent.GetPuppet and mdl_ent:GetPuppet() or mdl_ent
+
+					if mdl_ent:LookupBone("ValveBiped.Bip01_Spine4") then
+						local mdl_name = mdl_ent:GetModel()
+						
+						if tr.Entity:IsPlayer() then
+							tr.Entity:KillSilent()
+						else
+							tr.Entity:Remove()
+						end
+
+						local attachment=ents.Create("pill_attachment_body")
+						attachment.model = mdl_name
+						attachment:SetPos(ent:GetPos())
+						attachment:SetParent(ent)
+						attachment:Spawn()
+
+						ent.brainsucked=true
+					else
+						ent.brainsucked=false
+					end
+				else
+					ent.brainsucked=false
+				end
+
+				if !ent.brainsucked then
+					ent:PillAnim("fail",true)
+				end
+			end)
+			timer.Simple(2.3,function()
+				if !IsValid(ent) or !ent.brainsucked then return end
+				
+				ent:PillSound("brainsuck")
+
+				local effectdata = EffectData()
+
+				effectdata:SetOrigin(ent:LocalToWorld(Vector(75,0,-20)))
+				effectdata:SetNormal(ent:GetAngles():Forward())
+				effectdata:SetMagnitude(1)
+				effectdata:SetScale(10)
+				effectdata:SetColor(0)
+				effectdata:SetFlags(3)
+
+				util.Effect("bloodspray",effectdata)
+			end)
+			timer.Simple(5,function()
+				if !IsValid(ent) then return end
+				ent:PillAnim("idle",true)
+			end)
+		end
+	},
+	reload=function(ply,ent)
+		local traceres = util.QuickTrace(ent:GetPos(),ply:EyeAngles():Forward()*99999,{ply,ent})
+
+		local blast = ents.Create("pill_advisor_blast")
+		blast:SetPos(traceres.HitPos)
+		blast:SetOwner(ply)
+		blast:Spawn()
+
+		ent:PillSound("blast")
+	end,
+	sounds={
+		brainsuck="physics/flesh/flesh_squishy_impact_hard3.wav",
+		blast="npc/advisor/advisor_blast1.wav"
+	}
+})
+
+
 pk_pills.packFinalize()

@@ -13,19 +13,6 @@ ENT.Category = "Pill Pack Entities"
 //stick weapons/strider_buster/strider_buster_stick1.wav
 //det weapons/strider_buster/strider_buster_detonate.wav
 
-if CLIENT then
-	game.AddParticles( "particles/striderbuster.pcf" )
-
-	PrecacheParticleSystem("striderbuster_attach")
-	PrecacheParticleSystem("striderbuster_attach_flash")
-
-	PrecacheParticleSystem("striderbuster_explode_core")
-	PrecacheParticleSystem("striderbuster_explode_flash")
-
-	PrecacheParticleSystem("striderbuster_break")
-end
-
-
 function ENT:Initialize()
 	if SERVER then
 		//Physics
