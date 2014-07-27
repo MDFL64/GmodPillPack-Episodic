@@ -99,19 +99,16 @@ pk_pills.register("ep2_antlion_worker",{
 	}
 })
 
-pk_pills.register("ep2_cturret_1",{
+pk_pills.register("ep2_cturret",{
 	parent="cturret",
-	printName="Lambda Turret",
+	printName="Rebel Turret",
 	side=false,
 	model="models/birdbrainswagtrain/episodic/floor_turret.mdl",
 	default_rp_cost=3000,
-	skin=1
-})
-
-pk_pills.register("ep2_cturret_2",{
-	parent="ep2_cturret_1",
-	printName="Shark Turret",
-	skin=2
+	options=function() return {
+		{skin=1},
+		{skin=2}
+	} end,
 })
 
 pk_pills.register("ep2_guardian",{
