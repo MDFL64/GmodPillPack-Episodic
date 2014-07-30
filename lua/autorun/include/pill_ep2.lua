@@ -16,7 +16,7 @@ pk_pills.register("ep2_hunter",{
 	hull=Vector(60,60,100),
 	anims={
 		default={
-			idle="Idle",
+			idle="idle1",
 			walk="walk_all",
 			run="canter_all",
 			jump="jump",
