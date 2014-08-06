@@ -377,6 +377,3 @@ pk_pills.register("ep2_advisor",{
 		blast="npc/advisor/advisor_blast1.wav"
 	}
 })
-
-
-pk_pills.packFinalize()

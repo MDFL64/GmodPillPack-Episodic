@@ -204,5 +204,3 @@ pk_pills.register("ep1_vort_blue",{
 	end,
 	health=1000
 })
-
-pk_pills.packFinalize()

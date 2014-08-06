@@ -22,7 +22,9 @@ end
 
 AddCSLuaFile()
 
-if CLIENT then
+if SERVER then
+	resource.AddWorkshop("211811884")
+else
 	game.AddParticles("particles/weapon_fx.pcf")
 	PrecacheParticleSystem("weapon_combine_ion_cannon")
 	PrecacheParticleSystem("weapon_combine_ion_cannon_explosion")
@@ -40,17 +42,3 @@ end
 
 include("include/pill_ep1.lua")
 include("include/pill_ep2.lua")
-
-pk_pills.addFiles{
-	"models/birdbrainswagtrain/zombie/zombine_frame.mdl",
-	"models/birdbrainswagtrain/episodic/floor_turret.mdl",
-	"models/birdbrainswagtrain/episodic/roller.mdl",
-	"models/birdbrainswagtrain/episodic/roller_spikes.mdl"
-}
-
-pk_pills.addIcons{
-	"pill_wep_magnade",
-	"pill_wep_csniper"
-}
-
-pk_pills.addWorkshop("211811884")
