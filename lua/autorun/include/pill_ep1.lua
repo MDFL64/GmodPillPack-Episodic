@@ -1,8 +1,5 @@
 AddCSLuaFile()
 
-pk_pills.packStart("Episode 1","ep1","games/16/hl2.png")
-pk_pills.packRequireGame("Half-Life 2: Episode 1",380)
-
 pk_pills.register("ep1_advisorpod",{
 	printName="Advisor Pod",
 	side="hl_combine",

@@ -40,5 +40,10 @@ else
 	PrecacheParticleSystem("advisor_psychic_shield_idle")
 end
 
+pk_pills.packStart("Episode 1","ep1","games/16/hl2.png")
+pk_pills.packRequireGame("Half-Life 2: Episode 1",380)
 include("include/pill_ep1.lua")
+
+pk_pills.packStart("Episode 2","ep2","games/16/hl2.png")
+pk_pills.packRequireGame("Half-Life 2: Episode 2",420)
 include("include/pill_ep2.lua")
