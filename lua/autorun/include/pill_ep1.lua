@@ -21,7 +21,7 @@ pk_pills.register("ep1_advisorpod",{
 	attack={
 		mode= "trigger",
 		func= function(ply,ent)
-			pk_pills.apply(ply,"advisor")
+			pk_pills.apply(ply,"ep2_advisor")
 			ent:PillSound("breakout")
 		end
 	},

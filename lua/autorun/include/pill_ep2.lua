@@ -88,7 +88,7 @@ pk_pills.register("ep2_antlion_worker",{
 			end
 		end)
 	end,
-
+	aim={nocrosshair=false},
 	anims={
 		default={
 			spit="spit"
@@ -252,6 +252,7 @@ pk_pills.register("ep2_advisor",{
 	parent="advisor",
 	model="models/birdbrainswagtrain/episodic/advisor.mdl",
 	default_rp_cost=10000,
+	aim={},
 	attack={
 		mode="trigger",
 		func=function(ply,ent)
