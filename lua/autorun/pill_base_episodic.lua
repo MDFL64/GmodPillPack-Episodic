@@ -24,21 +24,21 @@ AddCSLuaFile()
 
 if SERVER then
 	resource.AddWorkshop("211811884")
-else
-	game.AddParticles("particles/weapon_fx.pcf")
-	PrecacheParticleSystem("weapon_combine_ion_cannon")
-	PrecacheParticleSystem("weapon_combine_ion_cannon_explosion")
-
-	game.AddParticles("particles/striderbuster.pcf")
-	PrecacheParticleSystem("striderbuster_attach")
-	PrecacheParticleSystem("striderbuster_attach_flash")
-	PrecacheParticleSystem("striderbuster_explode_core")
-	PrecacheParticleSystem("striderbuster_explode_flash")
-	PrecacheParticleSystem("striderbuster_break")
-
-	game.AddParticles("particles/advisor_fx.pcf")
-	PrecacheParticleSystem("advisor_psychic_shield_idle")
 end
+
+game.AddParticles("particles/weapon_fx.pcf")
+PrecacheParticleSystem("weapon_combine_ion_cannon")
+PrecacheParticleSystem("weapon_combine_ion_cannon_explosion")
+
+game.AddParticles("particles/striderbuster.pcf")
+PrecacheParticleSystem("striderbuster_attach")
+PrecacheParticleSystem("striderbuster_attach_flash")
+PrecacheParticleSystem("striderbuster_explode_core")
+PrecacheParticleSystem("striderbuster_explode_flash")
+PrecacheParticleSystem("striderbuster_break")
+
+game.AddParticles("particles/advisor_fx.pcf")
+PrecacheParticleSystem("advisor_psychic_shield_idle")
 
 pk_pills.packStart("Episode 1","ep1","games/16/hl2.png")
 pk_pills.packRequireGame("Half-Life 2: Episode 1",380)
