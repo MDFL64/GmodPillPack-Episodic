@@ -96,17 +96,28 @@ pk_pills.register("ep1_rollermine_orange",{
 	parent="rollermine",
 	printName="Orange Rollermine",
 	side=false,
-	model="models/birdbrainswagtrain/episodic/roller.mdl",
-	model2="models/birdbrainswagtrain/episodic/roller_spikes.mdl",
-	default_rp_cost=4000,
-	skin=1
+	subMats = {
+		[0]="models/roller/rollermine_hacked",
+		[1]="models/roller/rollermine_gloworange"
+	},
+	default_rp_cost=4000
 })
+
+/*
+
+4	=	models/roller/rollermine_gloworange
+6	=	models/roller/rollermine_glowred
+
+*/
 
 pk_pills.register("ep1_rollermine_red",{
 	parent="ep1_rollermine_orange",
 	printName="Red Rollermine",
 	side="wild",
-	skin=2
+	subMats = {
+		[0]="models/roller/rollermine_splode",
+		[1]="models/roller/rollermine_glowred"
+	},
 })
 
 pk_pills.register("ep1_zombine",{
