@@ -8,6 +8,7 @@
 		"*.gma",
 		"*.md",
 		"*.bat",
+		"icon.jpg",
 		"LICENSE"
 	]
 }
