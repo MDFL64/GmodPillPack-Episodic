@@ -100,11 +100,10 @@ pk_pills.register("ep2_cturret",{
 	parent="cturret",
 	printName="Rebel Turret",
 	side=false,
-	model="models/birdbrainswagtrain/episodic/floor_turret.mdl",
 	default_rp_cost=3000,
 	options=function() return {
-		{skin=1},
-		{skin=2}
+		{visMat="models/combine_turrets/floor_turret/floor_turret_citizen"},
+		{visMat="models/combine_turrets/floor_turret/floor_turret_citizen4"}
 	} end,
 })
 
