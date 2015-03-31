@@ -160,13 +160,6 @@ pk_pills.register("ep1_zombine",{
 	}
 })
 
-pk_pills.register("ep1_zombine_frame",{
-	parent="ep1_zombine",
-	printName=false,
-	model="models/birdbrainswagtrain/zombie/zombine_frame.mdl",
-	bodyGroups={false}
-})
-
 pk_pills.register("ep1_vort_blue",{
 	parent="vort",
 	printName="Transcendent Vortigaunt",
