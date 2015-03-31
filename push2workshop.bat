@@ -1,6 +1,6 @@
 @echo off
 
-set WSID=211811884
+set WSID=417428923
 
 echo Please Confirm. Is everything ready?
 
