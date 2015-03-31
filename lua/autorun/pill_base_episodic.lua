@@ -23,7 +23,7 @@ end
 AddCSLuaFile()
 
 if SERVER then
-	resource.AddWorkshop("211811884")
+	resource.AddWorkshop("417428923")
 end
 
 game.AddParticles("particles/weapon_fx.pcf")
